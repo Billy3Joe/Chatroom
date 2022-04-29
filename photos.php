@@ -91,8 +91,9 @@
 		</div>
 		
 		<div id="right-nav">
+
 			<h1>Your Photos</h1>
-	<div>
+	    <div>
 			<form method="post" action="add_photo.php" enctype="multipart/form-data">
 				<input type="file" name="image">
 				<button class="btn-submit-photo" name="Submit" value="Log out">Add Photos</button>
@@ -123,7 +124,96 @@
 
 		
 	</div>
+	<style>	
+			
+           /* CSS CHANGE THEME */
+		  
+				/*===== GOOGLE FONTS =====*/
 
+				@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+					/*========== Variables  theme noir ==========*/
+
+					body.dark-theme {
+					--title-color: #F1F3F2;
+					--text-color: #C7D1CC;
+					--body-color: #1D2521;
+					--container-color: #27302C;
+					--color: var(--text-color);
+				}
+
+
+				/*========== Button Dark/Light ==========*/
+
+				.change-theme {
+					position: absolute;
+					right: 9rem;
+					top: 1.8rem;
+					color: var(--text-color);
+					font-size: 1rem;
+					cursor: pointer;
+				}
+
+
+				html {
+					scroll-behavior: smooth;
+					position: relative;
+				}
+
+				body {
+					
+					font-family: 'Poppins', sans-serif;
+					background-color: var(--body-color);
+					color: var(--text-color);
+				}	
+			</style>
+
+			<!-- JAVASCRIPT CHANGE THEME -->
+
+			<script>
+
+			// <!-- JAVASCRIPT CHANGE THEME -->
+			let utilisateur = document.querySelector('.session');
+				let profUt = document.querySelector('.profilUtilisateur');
+				let theme = document.querySelector('.theme');
+				let body = document.querySelector('.body');
+				let fr = document.querySelector('.fr');
+				let topbar = document.querySelector('.topbar');
+				let topbar_logo = document.querySelector('.topbar-logo');
+				/*==================== changement de la couleurs du themes de fond ====================*/
+				const themeButton = document.getElementById('theme-button')
+				const darkTheme = 'dark-theme'
+				const iconTheme = 'bx-sun'
+
+				// Sujet précédemment sélectionné (si l'utilisateur l'a sélectionné)
+				const selectedTheme = localStorage.getItem('selected-theme')
+				const selectedIcon = localStorage.getItem('selected-icon')
+
+
+				// enregistrer le themes choisis par l'utilisateur meme si la page est réinitialisé
+				const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+				const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun'
+
+
+				if (selectedTheme) {
+					// Si la validation est remplie, on demande quel était le problème pour savoir si on a activé ou désactivé le dark
+					document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+					themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
+				}
+
+				// Activer/désactiver le thème manuellement avec le bouton
+				themeButton.addEventListener('click', () => {
+					// Ajouter ou supprimer l'icônes du themes sombres
+					document.body.classList.toggle(darkTheme)
+					themeButton.classList.toggle(iconTheme)
+
+					//  ont enregistre le themes et l'icone choisis par l'utilisateur meme si la page est réinitialisé
+					localStorage.setItem('selected-theme', getCurrentTheme())
+					localStorage.setItem('selected-icon', getCurrentIcon())
+
+				})
+
+			</script>
 </body>
 
 </html>

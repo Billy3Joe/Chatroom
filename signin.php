@@ -8,12 +8,14 @@
 
 <body>
 
-	<div id="container" style="background-color:darkgoldenrod;">
+	<div id="container" style="display:flex; justify-content:center;">
 		<div class="sign-in-form">
 			<table>
-			<h1 style=" color:#ffff;">Bienvenue à chatroom</h1>
-			<h2 style="color:#ffff;">Log in</h2>
-	<form method="post" action="signin_form.php" enctype="multipart/form-data">
+				<div style="text-align:center;">
+					<h1 style=" color:#ffff;">Bienvenue à chatroom</h1>
+					<h2 style="color:#ffff;">Log in</h2>
+				</div>
+	    <form method="post" action="signin_form.php" enctype="multipart/form-data">
 				<tr>
 					<td><label>Email</label></td>
 					<td><input type="email" name="email" placeholder="example@razor.com" class="form-1" title="Enter your email" required /></td>

@@ -1,115 +1,25 @@
-<?php
-function time_stamp($session_time) 
-{ 
- 
-$time_difference = time() - $session_time; 
-$seconds = $time_difference ; 
-$minutes = round($time_difference / 60 );
-$hours = round($time_difference / 3600 ); 
-$days = round($time_difference / 86400 ); 
-$weeks = round($time_difference / 604800 ); 
-$months = round($time_difference / 2419200 ); 
-$years = round($time_difference / 29030400 ); 
-
-if($seconds <= 60)
-{
-echo"$seconds seconds ago"; 
-}
-else if($minutes <=60)
-{
-   if($minutes==1)
-   {
-     echo"one minute ago"; 
-    }
-   else
-   {
-   echo"$minutes minutes ago"; 
-   }
-}
-else if($hours <=24)
-{
-   if($hours==1)
-   {
-   echo"one hour ago";
-   }
-  else
-  {
-  echo"$hours hours ago";
-  }
-}
-else if($days <=7)
-{
-  if($days==1)
-   {
-   echo"one day ago";
-   }
-  else
-  {
-  echo"$days days ago";
-  }
-
-
-  
-}
-else if($weeks <=4)
-{
-  if($weeks==1)
-   {
-   echo"one week ago";
-   }
-  else
-  {
-  echo"$weeks weeks ago";
-  }
- }
-else if($months <=12)
-{
-   if($months==1)
-   {
-   echo"one month ago";
-   }
-  else
-  {
-  echo"$months months ago";
-  }
- 
-   
-}
-
-else
-{
-if($years==1)
-   {
-   echo"one year ago";
-   }
-  else
-  {
-  echo"$years years ago";
-  }
-
-}
- 
-} 
-
-?>
+<?php include('function_time.php')?>
 
 <!DOCTYPE html>
 <html>
 
 	<head>
 		<title>Bienvenue à Chatroom - Sign up, Log in, Post </title>
+		 <!--========== BOX ICONS ==========-->
+
+		 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
 		<link rel="stylesheet" type="text/css" href="css/home.css">
 	</head>
 
-<body>
+<body class="dark">
 <?php include ('session.php');?>
 
-	<div id="header">
+	<div id="header"  style="position:sticky; top:0;">
 		<div class="head-view">
 			<ul>
 				<li><a href="home.php" title="Chatroom"><b>Chatroom</b></a></li>
-				<li></li>
-				<li></li>
 				<li></li>
 				<li></li>
 				<li></li>
@@ -119,6 +29,11 @@ if($years==1)
 				<li><a href="profile.php" title="Home"><label>Profile</label></a></li>
 				<li><a href="photos.php" title="Settings"><label>Photos</label></a></li>
 				<li><a href="logout.php" title="Log out"><button class="btn-sign-in" value="Log out">Log out</button></a></li>
+				<li><i style="background:#333; " class='bx bx-moon change-theme' id="theme-button"></i></li>
+		
+				<!-- FOLLOW  || DO NOT INCLUDE-->
+				<li><a class="Follow" href="https://github.com/Billy3Joe" target="blank_"></a></li>	
+				
 			</ul>
 		</div>
 	</div>
@@ -149,13 +64,126 @@ if($years==1)
 				<button class="btn-share" name="Submit" value="Log out">Share</button>
 			</form>
 	    </div>
-	
 	</div>
+
+
+			<style>
+	      /*  FOLLOW || DO NOT INCLUDE*/
+			.Follow {	
+				
+				background:url("upload/Billy.jpg")no-repeat center / contain;
+				width: 50px;
+				height: 50px;
+				bottom: 9px;
+				right: 20px;
+				display:block;
+				position:fixed;
+				border-radius:50%;
+				z-index:999;
+				-webkit-animation:  rotation 10s infinite linear;
+						animation:  rotation 10s infinite linear;
+				}
+
+				@-webkit-keyframes rotation {
+						from {
+								-webkit-transform: rotate(0deg);
+						}
+						to {
+								-webkit-transform: rotate(359deg);
+						}
+				}
+             /* CSS CHANGE THEME */
+
+
+				/*===== GOOGLE FONTS =====*/
+
+				@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+					/*========== Variables  theme noir ==========*/
+
+					body.dark-theme {
+					--title-color: #F1F3F2;
+					--text-color: #C7D1CC;
+					--body-color: #1D2521;
+					--container-color: #27302C;
+					--color: var(--text-color);
+				}
+
+
+				/*========== Button Dark/Light ==========*/
+
+				.change-theme {
+					position: absolute;
+					right: 9rem;
+					top: 1.8rem;
+					color: var(--text-color);
+					font-size: 1rem;
+					cursor: pointer;
+				}
+
+
+				html {
+					scroll-behavior: smooth;
+					position: relative;
+				}
+
+				body {
+					
+					font-family: 'Poppins', sans-serif;
+					background-color: var(--body-color);
+					color: var(--text-color);
+				}						
+			</style>
+
+			<!-- JAVASCRIPT CHANGE THEME -->
+
+			<script>
+				let utilisateur = document.querySelector('.session');
+				let profUt = document.querySelector('.profilUtilisateur');
+				let theme = document.querySelector('.theme');
+				let body = document.querySelector('.body');
+				let fr = document.querySelector('.fr');
+				let topbar = document.querySelector('.topbar');
+				let topbar_logo = document.querySelector('.topbar-logo');
+				/*==================== changement de la couleurs du themes de fond ====================*/
+				const themeButton = document.getElementById('theme-button')
+				const darkTheme = 'dark-theme'
+				const iconTheme = 'bx-sun'
+
+				// Sujet précédemment sélectionné (si l'utilisateur l'a sélectionné)
+				const selectedTheme = localStorage.getItem('selected-theme')
+				const selectedIcon = localStorage.getItem('selected-icon')
+
+
+				// enregistrer le themes choisis par l'utilisateur meme si la page est réinitialisé
+				const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+				const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun'
+
+
+				if (selectedTheme) {
+					// Si la validation est remplie, on demande quel était le problème pour savoir si on a activé ou désactivé le dark
+					document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+					themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
+				}
+
+				// Activer/désactiver le thème manuellement avec le bouton
+				themeButton.addEventListener('click', () => {
+					// Ajouter ou supprimer l'icônes du themes sombres
+					document.body.classList.toggle(darkTheme)
+					themeButton.classList.toggle(iconTheme)
+
+					//  ont enregistre le themes et l'icone choisis par l'utilisateur meme si la page est réinitialisé
+					localStorage.setItem('selected-theme', getCurrentTheme())
+					localStorage.setItem('selected-icon', getCurrentIcon())
+
+				})
+			</script>
 		
 <?php
 	include("includes/database.php");
 			$query=mySQLi_query($con,"SELECT * from user where user_id='$id' order by user_id DESC");
 			while($row=mySQLi_fetch_array($query)){
+
 				$id = $row['user_id'];
 ?>	
 		<div id="left-nav1">
@@ -246,48 +274,48 @@ if($years==1)
 		</center>
 		</div>
 
-<?php
-	include("includes/database.php");
-			$comment=mySQLi_query($con,"SELECT * from comments where post_id='$post_id' order by post_id DESC");
-			while($row=mySQLi_fetch_array($comment)){
-			$comment_id=$row['comment_id'];
-			$content_comment=$row['content_comment'];
-				$time=$row['created'];	
-			$post_id=$row['post_id'];
-			$user=$_SESSION['id'];
-			
-?>			
-			<div class="comment-display"<?php echo $comment_id ?>>
-					<div class="delete-post">
-					<a href="delete_comment.php<?php echo '?id='.$comment_id; ?>" title="Delete your comment"><button class="btn-delete">X</button></a>
+		<?php
+			include("includes/database.php");
+					$comment=mySQLi_query($con,"SELECT * from comments where post_id='$post_id' order by post_id DESC");
+					while($row=mySQLi_fetch_array($comment)){
+					$comment_id=$row['comment_id'];
+					$content_comment=$row['content_comment'];
+						$time=$row['created'];	
+					$post_id=$row['post_id'];
+					$user=$_SESSION['id'];
+					
+		?>			
+					<div class="comment-display"<?php echo $comment_id ?>>
+							<div class="delete-post">
+							<a href="delete_comment.php<?php echo '?id='.$comment_id; ?>" title="Delete your comment"><button class="btn-delete">X</button></a>
+							</div>
+						<div class="user-comment-name"><img src="<?php echo $row['image']; ?>">&nbsp;&nbsp;&nbsp;<?php echo $row['name']; ?><b class="time-comment"><?php echo $time = time_stamp($time); ?></b></div>
+						<div class="comment"><?php echo $row['content_comment']; ?></div>
+					
 					</div>
-				<div class="user-comment-name"><img src="<?php echo $row['image']; ?>">&nbsp;&nbsp;&nbsp;<?php echo $row['name']; ?><b class="time-comment"><?php echo $time = time_stamp($time); ?></b></div>
-				<div class="comment"><?php echo $row['content_comment']; ?></div>
-			
-			</div>
-			<br />
+					<br />
 
-<?php
-}
-?>
+		<?php
+		}
+		?>
 			
 
 		 <form  method="POST" action="comment.php">			
 			<div class="comment-area">
-			
-						<?php $image=mysqli_query($con,"select * from user where user_id='$id'");
-							while($row=mysqli_fetch_array($image)){
-							
+	
+				<?php $image=mysqli_query($con,"select * from user where user_id='$id'");
+					while($row=mysqli_fetch_array($image)){
+					
 
-							?>
-						<img src="<?php echo $row['profile_picture']; ?>" width="50" height="50">
-						<?php } ?>
-			
-			<input type="text" name="content_comment" placeholder="Write a comment..." class="comment-text">
-			<input type="hidden" name="post_id" value="<?php echo $post_id ?>">
-			<input type="hidden" name="user_id" value="<?php echo $firstname . ' ' . $lastname  ?>">
-			<input type="hidden" name="image" value="<?php echo $profile_picture  ?>">
-			<input type="submit" name="post_comment" value="Enter" class="btn-comment">
+					?>
+				<img src="<?php echo $row['profile_picture']; ?>" width="50" height="50">
+				<?php } ?>
+	
+				<input type="text" name="content_comment" placeholder="Write a comment..." class="comment-text">
+				<input type="hidden" name="post_id" value="<?php echo $post_id ?>">
+				<input type="hidden" name="user_id" value="<?php echo $firstname . ' ' . $lastname  ?>">
+				<input type="hidden" name="image" value="<?php echo $profile_picture  ?>">
+				<input type="submit" name="post_comment" value="Enter" class="btn-comment">
 			
 			</div>
 		</form>
@@ -300,7 +328,6 @@ if($years==1)
 	
 		
 	</div>
-
 </body>
 
 </html>

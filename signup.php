@@ -8,7 +8,7 @@
 
 <body>
 
-	<div id="container" style="background-color: sandybrown;">
+	<div id="container">
 		<div class="sign-in-form">
 		<center>	
 			<h1 style="color:#ffff;">Bienvenue à chatroom</h1>
@@ -18,9 +18,9 @@
 			<b>All fields are required.</b>
 		<br />
 		
-		<fieldset class="sign-up-form-1">
+		<fieldset class="sign-up-form-1" style="background-color:#fc9c1f;">
 		<form method="post" action="signup_form.php" enctype="multipart/form-data">
-			<table cellpadding="5" cellspacing="5">
+			<table cellpadding="5" cellspacing="5" style="background-color:#fc9c1f;">
 				<tr>
 					<td><label>First name*</label></td>
 					<td><label>Last name *</label></td>
@@ -45,9 +45,9 @@
 		
 		<br />		
 		
-		<fieldset class="sign-up-form-1">
+		<fieldset class="sign-up-form-1" style="background-color:#fc9c1f;">
 			<legend>Profile information</legend>
-			<table cellpadding="5" cellspacing="5">
+			<table cellpadding="5" cellspacing="5" style="background-color:#fc9c1f;">
 				<tr>
 					<td><label>Birthday</label></td>
 					<td>
@@ -106,9 +106,9 @@
 		
 		<br />
 		
-		<fieldset class="sign-up-form-1">
+		<fieldset class="sign-up-form-1" style="background-color:#fc9c1f;">
 			<legend>Log in information*</legend>
-			<table cellpadding="5" cellspacing="5">
+			<table cellpadding="5" cellspacing="5" style="background-color:#fc9c1f;">
 				<tr>
 					<td><label>Your email address*</label></td>
 					<td><label>Repeat email *</label></td>

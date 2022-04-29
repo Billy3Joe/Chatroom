@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 function time_stamp($session_time) 
 { 
  
@@ -292,7 +292,7 @@ if($years==1)
 			$content_comment=$row['content_comment'];
 			$time=$row['created'];	
 			$post_id=$row['post_id'];
-			$user=$_SESSION['id'];
+			$user=$_SESSION['user_id'];
 			
 ?>			
 			<div class="comment-display"<?php echo $comment_id ?>>
@@ -337,7 +337,7 @@ if($years==1)
 	
 	if (isset($_POST['post_comment']))
 	{
-		$user=$_SESSION['id'];
+		$user=$_SESSION['user_id'];
 		$content_comment=$_POST['content_comment'];
 		$post_id=$_POST['post_id'];
 		$user_id=$_POST['user_id'];
@@ -366,4 +366,4 @@ if($years==1)
 
 </body>
 
-</html>
+</html> -->
