@@ -157,41 +157,41 @@ if($years==1)
 <?php
 	include('includes/database.php');
 							
-							if (!isset($_FILES['image']['tmp_name'])) {
-							echo "";
-							}else{
-							$file=$_FILES['image']['tmp_name'];
-							$image = $_FILES["image"] ["name"];
-							$image_name= addslashes($_FILES['image']['name']);
-							$size = $_FILES["image"] ["size"];
-							$error = $_FILES["image"] ["error"];
+		if (!isset($_FILES['image']['tmp_name'])) {
+		echo "";
+		}else{
+		$file=$_FILES['image']['tmp_name'];
+		$image = $_FILES["image"] ["name"];
+		$image_name= addslashes($_FILES['image']['name']);
+		$size = $_FILES["image"] ["size"];
+		$error = $_FILES["image"] ["error"];
 
-							if ($error > 0){
-										die("Error uploading file! Code $error.");
-									}else{
-										if($size > 10000000) //conditions for the file
-										{
-										die("Format is not allowed or file size is too big!");
-										}
-										
-									else
-										{
+		if ($error > 0){
+					die("Error uploading file! Code $error.");
+				}else{
+					if($size > 10000000) //conditions for the file
+					{
+					die("Format is not allowed or file size is too big!");
+					}
+					
+				else
+					{
 
-									move_uploaded_file($_FILES["image"]["tmp_name"],"upload/" . $_FILES["image"]["name"]);			
-									$location="upload/" . $_FILES["image"]["name"];
-									$user=$_SESSION['id'];
-									$content=$_POST['content'];
-									$time=time();
-									
-									$update=mysqli_query($con," INSERT INTO post (user_id,post_image,content,created)
-									VALUES ('$id','$location','$content','$time') ");
+				move_uploaded_file($_FILES["image"]["tmp_name"],"upload/" . $_FILES["image"]["name"]);			
+				$location="upload/" . $_FILES["image"]["name"];
+				$user=$_SESSION['id'];
+				$content=$_POST['content'];
+				$time=time();
+				
+				$update=mysqli_query($con," INSERT INTO post (user_id,post_image,content,created)
+				VALUES ('$id','$location','$content','$time') ");
 
-									}
-										header('location:timeline.php');
-									
-									
-									}
-							}
+				}
+					header('location:timeline.php');
+				
+				
+				}
+		}
 ?>
 			
 	</div>
@@ -286,13 +286,13 @@ if($years==1)
 
 <?php
 	include("includes/database.php");
-			$comment=mySQLi_query($con,"SELECT * from comments where post_id='$post_id' order by post_id DESC") or die(mySQL_error());
-			while($row=mySQLi_fetch_array($comment)){
-			$comment_id=$row['comment_id'];
-			$content_comment=$row['content_comment'];
-			$time=$row['created'];	
-			$post_id=$row['post_id'];
-			$user=$_SESSION['user_id'];
+		$comment=mySQLi_query($con,"SELECT * from comments where post_id='$post_id' order by post_id DESC") or die(mySQL_error());
+		while($row=mySQLi_fetch_array($comment)){
+		$comment_id=$row['comment_id'];
+		$content_comment=$row['content_comment'];
+		$time=$row['created'];	
+		$post_id=$row['post_id'];
+		$user=$_SESSION['user_id'];
 			
 ?>			
 			<div class="comment-display"<?php echo $comment_id ?>>

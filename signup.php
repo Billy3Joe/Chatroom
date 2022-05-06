@@ -11,7 +11,7 @@
 	<div id="container">
 		<div class="sign-in-form">
 		<center>	
-			<h1 style="color:#ffff;">Bienvenue à chatroom</h1>
+			<h1 style="color:#ffff;">Bienvenue à4 chatroom</h1>
 		</center>
 
 			<h2 style="text-align: center; color:#ffff;">Sign up</h2>
@@ -31,11 +31,9 @@
 				</tr>
 				<tr>
 					<td><label>User name*</label></td>
-					<td><label>Repeat user name*</label></td>
 				</tr>
 				<tr>
 					<td><input type="text" name="username" placeholder="Enter your username....." class="form-1" title="Enter your username" required /></td>
-					<td><input type="text" name="username2" class="form-1" title="Enter your username" required /></td>
 				</tr>
 				<tr>
 					<td colspan="2">Note: No one can follow your username.</td>
@@ -111,22 +109,18 @@
 			<table cellpadding="5" cellspacing="5" style="background-color:#fc9c1f;">
 				<tr>
 					<td><label>Your email address*</label></td>
-					<td><label>Repeat email *</label></td>
 				</tr>
 				<tr>
 					<td><input type="text" name="email" placeholder="Enter your email address....." class="form-1" title="Enter your firstname" required /></td>
-					<td><input type="text" name="email2" class="form-1" title="Enter your lastname" required /></td>
 				</tr>
 				<tr>
 					<td colspan="2">Note: no-one can see your email address.</td>
 				</tr>
 				<tr>
 					<td><label>Password*</label></td>
-					<td><label>Repeat password*</label></td>
 				</tr>
 				<tr>
 					<td><input type="password" name="password" placeholder="Enter your password....." class="form-1" title="Enter your username" required /></td>
-					<td><input type="password" name="password2" class="form-1" title="Enter your username" required /></td>
 				</tr>
 				<tr>
 					<td colspan="2">Note: no-one else can see your password.</td>

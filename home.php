@@ -16,7 +16,7 @@
 <body class="dark">
 <?php include ('session.php');?>
 
-	<div id="header"  style="position:sticky; top:0;">
+	<div id="header">
 		<div class="head-view">
 			<ul>
 				<li><a href="home.php" title="Chatroom"><b>Chatroom</b></a></li>

@@ -20,7 +20,7 @@
 
 	<div id="container">
 		<div class="image-display">
-			<p style="background:#fff;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nihil recusandae rem dolor aut, sed saepe culpa tenetur ipsam laudantium quod voluptatem. Asperiores assumenda est id. Enim consequatur voluptatum tempora illum aspernatur iste incidunt iusto itaque, excepturi, est aperiam quo nemo vitae veritatis consectetur! Hic, animi? Provident dolorum fugiat itaque maiores commodi velit quisquam officia perspiciatis est? Nemo nobis temporibus fugiat omnis ratione iusto vitae! Quaerat ipsam, rem adipisci totam, nemo veniam excepturi quam illum laborum voluptatem consectetur, quasi possimus. Nisi, repudiandae expedita ad laboriosam labore odio sunt obcaecati. Deleniti maxime recusandae praesentium exercitationem architecto voluptas nesciunt molestias eum velit?</p>
+			<p style="text-align:justify; margin-top:25%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nihil recusandae rem dolor aut, sed saepe culpa tenetur ipsam laudantium quod voluptatem. Asperiores assumenda est id. Enim consequatur voluptatum tempora illum aspernatur iste incidunt iusto itaque, excepturi, est aperiam quo nemo vitae veritatis consectetur! Hic, animi? Provident dolorum fugiat itaque maiores commodi velit quisquam officia perspiciatis est? Nemo nobis temporibus fugiat omnis ratione iusto vitae! Quaerat ipsam, rem adipisci totam, nemo veniam excepturi quam illum laborum voluptatem consectetur, quasi possimus. Nisi, repudiandae expedita ad laboriosam labore odio sunt obcaecati. Deleniti maxime recusandae praesentium exercitationem architecto voluptas nesciunt molestias eum velit?</p>
 				<!-- <img src="image/wold.jpg" class="img-style" /> -->
 		</div>
 	</div>
