@@ -7,16 +7,16 @@
 	</head>
 
 <body>
+	<header>
+		<a href=""><b>Chatroom</b></a>
+		<nav>
+		<a href=""><i class="fa fa-home"></i>Home</a>
+		<a href="signin.php" title="Sign in"><button class="btn-sign-in" value="Sign in"><i class="fa fa-sign-out"></i>Sign in</button></a>
+		<a href="signup.php" title="Sign up"><button class="btn-sign-up" value="Sign up"><i class="fa fa-registered"></i>Sign up</button></a>
+		</nav>
+    </header>
 
-	<div id="header">
-		<div class="head-view">
-			<ul>
-				<li><b>Chatroom</b></li>
-				<li><a href="signin.php" title="Sign in"><button class="btn-sign-in" value="Sign in">Sign in</button></a></li>
-				<li><a href="signup.php" title="Sign up"><button class="btn-sign-up" value="Sign up">Sign up</button></a></li>
-			</ul>
-		</div>
-	</div>
+<!-- JS NAVBAR -->
 
 	<div id="container">
 		<div class="image-display">
@@ -102,8 +102,8 @@
 					 themeButton.classList[selectedIcon === 'bx-moon' ? 'add' : 'remove'](iconTheme)
 				 }
  
-				 // Activer/désactiver le thème manuellement avec le bouton
-				 themeButton.addEventListener('click', () => {
+					// Activer/désactiver le thème manuellement avec le bouton
+					themeButton.addEventListener('click', () => {
 					 // Ajouter ou supprimer l'icônes du themes sombres
 					 document.body.classList.toggle(darkTheme)
 					 themeButton.classList.toggle(iconTheme)
