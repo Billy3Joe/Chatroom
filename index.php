@@ -6,13 +6,13 @@
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</head>
 
-<body>
+<body style="background-image: url('image/reseau.svg');">
 	<header>
 		<a href=""><b>Chatroom</b></a>
 		<nav>
 		<a href=""><i class="fa fa-home"></i>Home</a>
-		<a href="signin.php" title="Sign in"><button class="btn-sign-in" value="Sign in"><i class="fa fa-sign-out"></i>Sign in</button></a>
-		<a href="signup.php" title="Sign up"><button class="btn-sign-up" value="Sign up"><i class="fa fa-registered"></i>Sign up</button></a>
+		<a href="signin.php" title="Sign in"class="btn-sign-in" value="Sign in"><i class="fa fa-sign-out"></i>Sign in</a>
+		<a href="signup.php" title="Sign up"class="btn-sign-up" value="Sign up"><i class="fa fa-registered"></i>Sign up</a>
 		</nav>
     </header>
 
@@ -20,8 +20,9 @@
 
 	<div id="container">
 		<div class="image-display">
-			<p style="text-align:justify; margin-top:25%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nihil recusandae rem dolor aut, sed saepe culpa tenetur ipsam laudantium quod voluptatem. Asperiores assumenda est id. Enim consequatur voluptatum tempora illum aspernatur iste incidunt iusto itaque, excepturi, est aperiam quo nemo vitae veritatis consectetur! Hic, animi? Provident dolorum fugiat itaque maiores commodi velit quisquam officia perspiciatis est? Nemo nobis temporibus fugiat omnis ratione iusto vitae! Quaerat ipsam, rem adipisci totam, nemo veniam excepturi quam illum laborum voluptatem consectetur, quasi possimus. Nisi, repudiandae expedita ad laboriosam labore odio sunt obcaecati. Deleniti maxime recusandae praesentium exercitationem architecto voluptas nesciunt molestias eum velit?</p>
+			<p style="box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px; background:#fff;text-align:justify; margin-top:15%;margin-left:300px; width:930px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam nihil recusandae rem dolor aut, sed saepe culpa tenetur ipsam laudantium quod voluptatem. Asperiores assumenda est id. Enim consequatur voluptatum tempora illum aspernatur iste incidunt iusto itaque, excepturi, est aperiam quo nemo vitae veritatis consectetur! Hic, animi? Provident dolorum fugiat itaque maiores commodi velit quisquam officia perspiciatis est? Nemo nobis temporibus fugiat omnis ratione iusto vitae! Quaerat ipsam, rem adipisci totam, nemo veniam excepturi quam illum laborum voluptatem consectetur, quasi possimus. Nisi, repudiandae expedita ad laboriosam labore odio sunt obcaecati. Deleniti maxime recusandae praesentium exercitationem architecto voluptas nesciunt molestias eum velit?</p>
 				<!-- <img src="image/wold.jpg" class="img-style" /> -->
+			
 		</div>
 	</div>
 

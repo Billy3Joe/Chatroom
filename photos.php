@@ -9,24 +9,19 @@
 <body>
 <?php include ('session.php');?>
 
-	<div id="header">
-		<div class="head-view">
-			<ul>
-				<li><a href="home.php" title="Biobook"><b>Chatroom</b></a></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li><a href="timeline.php" title="<?php echo $username ?>"><label><?php echo $username ?></label></a></li>
-				<li><a href="home.php" title="Home"><label>Home</label></a></li>
-				<li><a href="profile.php" title="Profile"><label>Profile</label></a></li>
-				<li><a href="photos.php" title="Settings"><label class="active">Photos</label></a></li>
-				<li><a href="logout.php" title="Log out"><button class="btn-sign-in" value="Log out">Log out</button></a></li>
-			</ul>
-		</div>
-	</div>
+<header>
+		<a href="#"><b>Chatroom</b></a>
+		<nav>
+		<!-- <li><a href="timeline.php" title="<?php echo $username ?>"><label><?php echo $username ?></label></a></li> -->
+		<a href="home.php"><i class="fa fa-home"></i>Home</a>
+		<a href="profile.php"title="Home"class="btn-sign-in" value="Sign in"><i class="fa fa-sign-out"></i>Profile</a>
+		<a href="photos.php" title="Settings"class="btn-sign-up" value="Sign up"><i class="fa fa-registered"></i>Photos</a>
+		<a href="logout.php" title="Log out" class="btn-sign-up" value="Sign up"><i class="fa fa-registered"></i>Log out</a>
+
+		<!-- FOLLOW  || DO NOT INCLUDE-->
+		<a class="Follow" href="https://github.com/Billy3Joe" target="blank_"></a>
+		</nav>
+    </header>
 
 	<div id="container">
 	
